@@ -35,20 +35,32 @@ limitations under the License.
 
 > Interchange two complex single-precision floating-point vectors.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-base-cswap-wasm
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import cswap from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-cswap-wasm@deno/mod.js';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { Module } from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-cswap-wasm@deno/mod.js';
+var cswap = require( '@stdlib/blas-base-cswap-wasm' );
 ```
 
 #### cswap.main( N, x, strideX, y, strideY )
@@ -56,9 +68,9 @@ import { Module } from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-cswap-wa
 Interchanges two complex single-precision floating-point vectors.
 
 ```javascript
-import Complex64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex64@deno/mod.js';
-import realf from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32-real@deno/mod.js';
-import imagf from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32-imag@deno/mod.js';
+var Complex64Array = require( '@stdlib/array-complex64' );
+var realf = require( '@stdlib/complex-float32-real' );
+var imagf = require( '@stdlib/complex-float32-imag' );
 
 var x = new Complex64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ] );
 var y = new Complex64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
@@ -95,9 +107,9 @@ The function has the following parameters:
 The `N` and stride parameters determine how values from `x` are interchanged with values from `y`. For example, to interchange every other value in `x` with the first `N` elements of `y` in reverse order,
 
 ```javascript
-import Complex64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex64@deno/mod.js';
-import realf from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32-real@deno/mod.js';
-import imagf from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32-imag@deno/mod.js';
+var Complex64Array = require( '@stdlib/array-complex64' );
+var realf = require( '@stdlib/complex-float32-real' );
+var imagf = require( '@stdlib/complex-float32-imag' );
 
 var x = new Complex64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
 var y = new Complex64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
@@ -128,9 +140,9 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 <!-- eslint-disable stdlib/capitalized-comments -->
 
 ```javascript
-import Complex64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex64@deno/mod.js';
-import realf from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32-real@deno/mod.js';
-import imagf from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32-imag@deno/mod.js';
+var Complex64Array = require( '@stdlib/array-complex64' );
+var realf = require( '@stdlib/complex-float32-real' );
+var imagf = require( '@stdlib/complex-float32-imag' );
 
 // Initial arrays...
 var x0 = new Complex64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
@@ -167,9 +179,9 @@ im = imagf( z );
 Interchanges two complex single-precision floating-point vectors using alternative indexing semantics.
 
 ```javascript
-import Complex64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex64@deno/mod.js';
-import realf from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32-real@deno/mod.js';
-import imagf from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32-imag@deno/mod.js';
+var Complex64Array = require( '@stdlib/array-complex64' );
+var realf = require( '@stdlib/complex-float32-real' );
+var imagf = require( '@stdlib/complex-float32-imag' );
 
 var x = new Complex64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ] );
 var y = new Complex64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
@@ -203,9 +215,9 @@ The function has the following additional parameters:
 While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying buffer, the offset parameters support indexing semantics based on starting indices. For example, to interchange every other value in `x` starting from the second value into the last `N` elements in `y` where `x[i] = y[n]`, `x[i+2] = y[n-1]`,...,
 
 ```javascript
-import Complex64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex64@deno/mod.js';
-import realf from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32-real@deno/mod.js';
-import imagf from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32-imag@deno/mod.js';
+var Complex64Array = require( '@stdlib/array-complex64' );
+var realf = require( '@stdlib/complex-float32-real' );
+var imagf = require( '@stdlib/complex-float32-imag' );
 
 var x = new Complex64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
 var y = new Complex64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
@@ -242,7 +254,7 @@ Returns a new WebAssembly [module wrapper][@stdlib/wasm/module-wrapper] instance
 <!-- eslint-disable node/no-sync -->
 
 ```javascript
-import Memory from 'https://cdn.jsdelivr.net/gh/stdlib-js/wasm-memory@deno/mod.js';
+var Memory = require( '@stdlib/wasm-memory' );
 
 // Create a new memory instance with an initial size of 10 pages (640KiB) and a maximum size of 100 pages (6.4MiB):
 var mem = new Memory({
@@ -265,13 +277,13 @@ Interchanges two complex single-precision floating-point vectors.
 <!-- eslint-disable node/no-sync -->
 
 ```javascript
-import Memory from 'https://cdn.jsdelivr.net/gh/stdlib-js/wasm-memory@deno/mod.js';
-import oneTo from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-one-to@deno/mod.js';
-import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@deno/mod.js';
-import bytesPerElement from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-bytes-per-element@deno/mod.js';
-import Complex64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex64@deno/mod.js';
-import reinterpretComplex64 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-reinterpret-complex64@deno/mod.js';
-import cswap from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-cswap-wasm@deno/mod.js';
+var Memory = require( '@stdlib/wasm-memory' );
+var oneTo = require( '@stdlib/array-one-to' );
+var zeros = require( '@stdlib/array-zeros' );
+var bytesPerElement = require( '@stdlib/ndarray-base-bytes-per-element' );
+var Complex64Array = require( '@stdlib/array-complex64' );
+var reinterpretComplex64 = require( '@stdlib/strided-base-reinterpret-complex64' );
+var cswap = require( '@stdlib/blas-base-cswap-wasm' );
 
 // Create a new memory instance with an initial size of 10 pages (320KiB) and a maximum size of 100 pages (6.4MiB):
 var mem = new Memory({
@@ -336,13 +348,13 @@ Interchanges two complex single-precision floating-point vectors using alternati
 <!-- eslint-disable node/no-sync -->
 
 ```javascript
-import Memory from 'https://cdn.jsdelivr.net/gh/stdlib-js/wasm-memory@deno/mod.js';
-import oneTo from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-one-to@deno/mod.js';
-import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@deno/mod.js';
-import bytesPerElement from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-bytes-per-element@deno/mod.js';
-import Complex64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex64@deno/mod.js';
-import reinterpretComplex64 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-reinterpret-complex64@deno/mod.js';
-import cswap from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-cswap-wasm@deno/mod.js';
+var Memory = require( '@stdlib/wasm-memory' );
+var oneTo = require( '@stdlib/array-one-to' );
+var zeros = require( '@stdlib/array-zeros' );
+var bytesPerElement = require( '@stdlib/ndarray-base-bytes-per-element' );
+var Complex64Array = require( '@stdlib/array-complex64' );
+var reinterpretComplex64 = require( '@stdlib/strided-base-reinterpret-complex64' );
+var cswap = require( '@stdlib/blas-base-cswap-wasm' );
 
 // Create a new memory instance with an initial size of 10 pages (320KiB) and a maximum size of 100 pages (6.4MiB):
 var mem = new Memory({
@@ -424,12 +436,12 @@ The function has the following additional parameters:
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import hasWebAssemblySupport from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-has-wasm-support@deno/mod.js';
-import oneTo from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-one-to@deno/mod.js';
-import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@deno/mod.js';
-import Complex64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex64@deno/mod.js';
-import reinterpretComplex64 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-reinterpret-complex64@deno/mod.js';
-import cswap from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-cswap-wasm@deno/mod.js';
+var hasWebAssemblySupport = require( '@stdlib/assert-has-wasm-support' );
+var oneTo = require( '@stdlib/array-one-to' );
+var zeros = require( '@stdlib/array-zeros' );
+var Complex64Array = require( '@stdlib/array-complex64' );
+var reinterpretComplex64 = require( '@stdlib/strided-base-reinterpret-complex64' );
+var cswap = require( '@stdlib/blas-base-cswap-wasm' );
 
 // Specify a vector length:
 var N = 5;
@@ -472,7 +484,7 @@ console.log( reinterpretComplex64( y, 0 ) );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -489,7 +501,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -541,13 +553,13 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/array/complex64]: https://github.com/stdlib-js/array-complex64/tree/deno
+[@stdlib/array/complex64]: https://github.com/stdlib-js/array-complex64
 
-[@stdlib/wasm/memory]: https://github.com/stdlib-js/wasm-memory/tree/deno
+[@stdlib/wasm/memory]: https://github.com/stdlib-js/wasm-memory
 
-[@stdlib/wasm/module-wrapper]: https://github.com/stdlib-js/wasm-module-wrapper/tree/deno
+[@stdlib/wasm/module-wrapper]: https://github.com/stdlib-js/wasm-module-wrapper
 
-[@stdlib/blas/base/cswap]: https://github.com/stdlib-js/blas-base-cswap/tree/deno
+[@stdlib/blas/base/cswap]: https://github.com/stdlib-js/blas-base-cswap
 
 </section>
 
