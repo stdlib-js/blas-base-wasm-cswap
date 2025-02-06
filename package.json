@@ -1,18 +1,102 @@
 {
-  "name": "@stdlib/blas-base-cswap-wasm",
+  "name": "@stdlib/blas-base-wasm-cswap",
   "version": "0.0.0",
   "description": "Interchange two complex single-precision floating-point vectors.",
   "license": "Apache-2.0",
-  "type": "module",
-  "main": "./mod.js",
+  "author": {
+    "name": "The Stdlib Authors",
+    "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
+  },
+  "contributors": [
+    {
+      "name": "The Stdlib Authors",
+      "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
+    }
+  ],
+  "main": "./lib",
+  "browser": {
+    "./lib/binary.js": "./lib/binary.browser.js"
+  },
+  "directories": {
+    "benchmark": "./benchmark",
+    "doc": "./docs",
+    "example": "./examples",
+    "lib": "./lib",
+    "scripts": "./scripts",
+    "src": "./src",
+    "test": "./test"
+  },
+  "types": "./docs/types",
+  "scripts": {
+    "test": "make test",
+    "test-cov": "make test-cov",
+    "examples": "make examples",
+    "benchmark": "make benchmark"
+  },
   "homepage": "https://stdlib.io",
   "repository": {
     "type": "git",
-    "url": "git://github.com/stdlib-js/blas-base-cswap-wasm.git"
+    "url": "git://github.com/stdlib-js/blas-base-wasm-cswap.git"
   },
   "bugs": {
     "url": "https://github.com/stdlib-js/stdlib/issues"
   },
+  "dependencies": {
+    "@stdlib/assert-is-wasm-memory": "github:stdlib-js/assert-is-wasm-memory#main",
+    "@stdlib/blas-base-cswap": "^0.3.0",
+    "@stdlib/fs-read-wasm": "^0.2.2",
+    "@stdlib/strided-base-read-dataview": "github:stdlib-js/strided-base-read-dataview#main",
+    "@stdlib/strided-base-stride2offset": "^0.1.0",
+    "@stdlib/error-tools-fmtprodmsg": "^0.2.2",
+    "@stdlib/types": "^0.4.3",
+    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.2.2",
+    "@stdlib/utils-inherit": "^0.2.2",
+    "@stdlib/utils-library-manifest": "^0.2.2",
+    "@stdlib/wasm-base-arrays2ptrs": "github:stdlib-js/wasm-base-arrays2ptrs#main",
+    "@stdlib/wasm-base-strided2object": "github:stdlib-js/wasm-base-strided2object#main",
+    "@stdlib/wasm-memory": "github:stdlib-js/wasm-memory#main",
+    "@stdlib/wasm-module-wrapper": "github:stdlib-js/wasm-module-wrapper#main",
+    "@stdlib/error-tools-fmtprodmsg": "^0.2.2"
+  },
+  "devDependencies": {
+    "@stdlib/array-complex64": "^0.3.0",
+    "@stdlib/array-float32": "^0.2.2",
+    "@stdlib/array-little-endian-float32": "github:stdlib-js/array-little-endian-float32#main",
+    "@stdlib/array-one-to": "^0.2.2",
+    "@stdlib/array-zeros": "^0.2.2",
+    "@stdlib/assert-has-wasm-support": "^0.2.2",
+    "@stdlib/blas-base-scopy": "^0.2.2",
+    "@stdlib/blas-ext-base-gfill-by": "^0.2.1",
+    "@stdlib/fs-read-file": "^0.2.2",
+    "@stdlib/fs-write-file": "^0.2.2",
+    "@stdlib/math-base-assert-is-nanf": "^0.2.2",
+    "@stdlib/math-base-special-pow": "^0.3.0",
+    "@stdlib/ndarray-base-bytes-per-element": "^0.2.2",
+    "@stdlib/random-array-uniform": "^0.2.1",
+    "@stdlib/random-base-discrete-uniform": "^0.2.1",
+    "@stdlib/strided-base-reinterpret-complex64": "^0.2.1",
+    "@stdlib/string-base-base64-to-uint8array": "github:stdlib-js/string-base-base64-to-uint8array#main",
+    "@stdlib/string-replace": "^0.2.2",
+    "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
+    "istanbul": "^0.4.1",
+    "tap-min": "git+https://github.com/Planeshifter/tap-min.git",
+    "@stdlib/bench-harness": "^0.2.2"
+  },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">2.7.0"
+  },
+  "os": [
+    "aix",
+    "darwin",
+    "freebsd",
+    "linux",
+    "macos",
+    "openbsd",
+    "sunos",
+    "win32",
+    "windows"
+  ],
   "keywords": [
     "stdlib",
     "stdmath",
@@ -38,6 +122,9 @@
     "webassembly",
     "wasm"
   ],
+  "__stdlib__": {
+    "wasm": true
+  },
   "funding": {
     "type": "opencollective",
     "url": "https://opencollective.com/stdlib"
