@@ -40,7 +40,7 @@ limitations under the License.
 ## Installation
 
 ```bash
-npm install @stdlib/blas-base-cswap-wasm
+npm install @stdlib/blas-base-wasm-cswap
 ```
 
 Alternatively,
@@ -60,7 +60,7 @@ To view installation and usage instructions specific to each branch build, be su
 ## Usage
 
 ```javascript
-var cswap = require( '@stdlib/blas-base-cswap-wasm' );
+var cswap = require( '@stdlib/blas-base-wasm-cswap' );
 ```
 
 #### cswap.main( N, x, strideX, y, strideY )
@@ -283,7 +283,7 @@ var zeros = require( '@stdlib/array-zeros' );
 var bytesPerElement = require( '@stdlib/ndarray-base-bytes-per-element' );
 var Complex64Array = require( '@stdlib/array-complex64' );
 var reinterpretComplex64 = require( '@stdlib/strided-base-reinterpret-complex64' );
-var cswap = require( '@stdlib/blas-base-cswap-wasm' );
+var cswap = require( '@stdlib/blas-base-wasm-cswap' );
 
 // Create a new memory instance with an initial size of 10 pages (320KiB) and a maximum size of 100 pages (6.4MiB):
 var mem = new Memory({
@@ -354,7 +354,7 @@ var zeros = require( '@stdlib/array-zeros' );
 var bytesPerElement = require( '@stdlib/ndarray-base-bytes-per-element' );
 var Complex64Array = require( '@stdlib/array-complex64' );
 var reinterpretComplex64 = require( '@stdlib/strided-base-reinterpret-complex64' );
-var cswap = require( '@stdlib/blas-base-cswap-wasm' );
+var cswap = require( '@stdlib/blas-base-wasm-cswap' );
 
 // Create a new memory instance with an initial size of 10 pages (320KiB) and a maximum size of 100 pages (6.4MiB):
 var mem = new Memory({
@@ -441,7 +441,7 @@ var oneTo = require( '@stdlib/array-one-to' );
 var zeros = require( '@stdlib/array-zeros' );
 var Complex64Array = require( '@stdlib/array-complex64' );
 var reinterpretComplex64 = require( '@stdlib/strided-base-reinterpret-complex64' );
-var cswap = require( '@stdlib/blas-base-cswap-wasm' );
+var cswap = require( '@stdlib/blas-base-wasm-cswap' );
 
 // Specify a vector length:
 var N = 5;
@@ -511,19 +511,19 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 <section class="links">
 
-[npm-image]: http://img.shields.io/npm/v/@stdlib/blas-base-cswap-wasm.svg
-[npm-url]: https://npmjs.org/package/@stdlib/blas-base-cswap-wasm
+[npm-image]: http://img.shields.io/npm/v/@stdlib/blas-base-wasm-cswap.svg
+[npm-url]: https://npmjs.org/package/@stdlib/blas-base-wasm-cswap
 
-[test-image]: https://github.com/stdlib-js/blas-base-cswap-wasm/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/blas-base-cswap-wasm/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/blas-base-wasm-cswap/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/blas-base-wasm-cswap/actions/workflows/test.yml?query=branch:main
 
-[coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/blas-base-cswap-wasm/main.svg
-[coverage-url]: https://codecov.io/github/stdlib-js/blas-base-cswap-wasm?branch=main
+[coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/blas-base-wasm-cswap/main.svg
+[coverage-url]: https://codecov.io/github/stdlib-js/blas-base-wasm-cswap?branch=main
 
 <!--
 
-[dependencies-image]: https://img.shields.io/david/stdlib-js/blas-base-cswap-wasm.svg
-[dependencies-url]: https://david-dm.org/stdlib-js/blas-base-cswap-wasm/main
+[dependencies-image]: https://img.shields.io/david/stdlib-js/blas-base-wasm-cswap.svg
+[dependencies-url]: https://david-dm.org/stdlib-js/blas-base-wasm-cswap/main
 
 -->
 
@@ -537,15 +537,15 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 [umd]: https://github.com/umdjs/umd
 [es-module]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 
-[deno-url]: https://github.com/stdlib-js/blas-base-cswap-wasm/tree/deno
-[deno-readme]: https://github.com/stdlib-js/blas-base-cswap-wasm/blob/deno/README.md
-[umd-url]: https://github.com/stdlib-js/blas-base-cswap-wasm/tree/umd
-[umd-readme]: https://github.com/stdlib-js/blas-base-cswap-wasm/blob/umd/README.md
-[esm-url]: https://github.com/stdlib-js/blas-base-cswap-wasm/tree/esm
-[esm-readme]: https://github.com/stdlib-js/blas-base-cswap-wasm/blob/esm/README.md
-[branches-url]: https://github.com/stdlib-js/blas-base-cswap-wasm/blob/main/branches.md
+[deno-url]: https://github.com/stdlib-js/blas-base-wasm-cswap/tree/deno
+[deno-readme]: https://github.com/stdlib-js/blas-base-wasm-cswap/blob/deno/README.md
+[umd-url]: https://github.com/stdlib-js/blas-base-wasm-cswap/tree/umd
+[umd-readme]: https://github.com/stdlib-js/blas-base-wasm-cswap/blob/umd/README.md
+[esm-url]: https://github.com/stdlib-js/blas-base-wasm-cswap/tree/esm
+[esm-readme]: https://github.com/stdlib-js/blas-base-wasm-cswap/blob/esm/README.md
+[branches-url]: https://github.com/stdlib-js/blas-base-wasm-cswap/blob/main/branches.md
 
-[stdlib-license]: https://raw.githubusercontent.com/stdlib-js/blas-base-cswap-wasm/main/LICENSE
+[stdlib-license]: https://raw.githubusercontent.com/stdlib-js/blas-base-wasm-cswap/main/LICENSE
 
 [blas]: http://www.netlib.org/blas
 

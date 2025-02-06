@@ -1,5 +1,5 @@
 {
-  "name": "@stdlib/blas-base-cswap-wasm",
+  "name": "@stdlib/blas-base-wasm-cswap",
   "version": "0.0.0",
   "description": "Interchange two complex single-precision floating-point vectors.",
   "license": "Apache-2.0",
@@ -36,7 +36,7 @@
   "homepage": "https://stdlib.io",
   "repository": {
     "type": "git",
-    "url": "git://github.com/stdlib-js/blas-base-cswap-wasm.git"
+    "url": "git://github.com/stdlib-js/blas-base-wasm-cswap.git"
   },
   "bugs": {
     "url": "https://github.com/stdlib-js/stdlib/issues"

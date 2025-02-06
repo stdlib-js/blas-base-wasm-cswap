@@ -4,13 +4,13 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-01-13)
+## Unreleased (2025-02-06)
 
 <section class="features">
 
 ### Features
 
--   [`493db03`](https://github.com/stdlib-js/stdlib/commit/493db039c45d831e1c61346ac50224a592583760) - add `blas/base/cswap-wasm` [(#3211)](https://github.com/stdlib-js/stdlib/pull/3211)
+-   [`f067e80`](https://github.com/stdlib-js/stdlib/commit/f067e80ba5ee58232b73600e7fdfe46529d34f99) - add `blas/base/wasm/cswap`
 
 </section>
 
@@ -22,7 +22,7 @@
 
 <details>
 
--   [`493db03`](https://github.com/stdlib-js/stdlib/commit/493db039c45d831e1c61346ac50224a592583760) - **feat:** add `blas/base/cswap-wasm` [(#3211)](https://github.com/stdlib-js/stdlib/pull/3211) _(by Aman Bhansali, Athan Reines)_
+-   [`f067e80`](https://github.com/stdlib-js/stdlib/commit/f067e80ba5ee58232b73600e7fdfe46529d34f99) - **feat:** add `blas/base/wasm/cswap` _(by Athan Reines)_
 
 </details>
 
@@ -34,9 +34,8 @@
 
 ### Contributors
 
-A total of 2 people contributed to this release. Thank you to the following contributors:
+A total of 1 person contributed to this release. Thank you to this contributor:
 
--   Aman Bhansali
 -   Athan Reines
 
 </section>

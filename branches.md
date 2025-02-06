@@ -38,19 +38,19 @@ C -->|bundle| D[esm];
 C -->|bundle| E[deno];
 C -->|bundle| F[umd];
 
-%% click A href "https://github.com/stdlib-js/stdlib/tree/develop/lib/node_modules/%40stdlib/blas/base/cswap-wasm"
-%% click B href "https://github.com/stdlib-js/blas-base-cswap-wasm/tree/main"
-%% click C href "https://github.com/stdlib-js/blas-base-cswap-wasm/tree/production"
-%% click D href "https://github.com/stdlib-js/blas-base-cswap-wasm/tree/esm"
-%% click E href "https://github.com/stdlib-js/blas-base-cswap-wasm/tree/deno"
-%% click F href "https://github.com/stdlib-js/blas-base-cswap-wasm/tree/umd"
+%% click A href "https://github.com/stdlib-js/stdlib/tree/develop/lib/node_modules/%40stdlib/blas/base/wasm/cswap"
+%% click B href "https://github.com/stdlib-js/blas-base-wasm-cswap/tree/main"
+%% click C href "https://github.com/stdlib-js/blas-base-wasm-cswap/tree/production"
+%% click D href "https://github.com/stdlib-js/blas-base-wasm-cswap/tree/esm"
+%% click E href "https://github.com/stdlib-js/blas-base-wasm-cswap/tree/deno"
+%% click F href "https://github.com/stdlib-js/blas-base-wasm-cswap/tree/umd"
 ```
 
-[stdlib-url]: https://github.com/stdlib-js/stdlib/tree/develop/lib/node_modules/%40stdlib/blas/base/cswap-wasm
-[production-url]: https://github.com/stdlib-js/blas-base-cswap-wasm/tree/production
-[deno-url]: https://github.com/stdlib-js/blas-base-cswap-wasm/tree/deno
-[deno-readme]: https://github.com/stdlib-js/blas-base-cswap-wasm/blob/deno/README.md
-[umd-url]: https://github.com/stdlib-js/blas-base-cswap-wasm/tree/umd
-[umd-readme]: https://github.com/stdlib-js/blas-base-cswap-wasm/blob/umd/README.md
-[esm-url]: https://github.com/stdlib-js/blas-base-cswap-wasm/tree/esm
-[esm-readme]: https://github.com/stdlib-js/blas-base-cswap-wasm/blob/esm/README.md
+[stdlib-url]: https://github.com/stdlib-js/stdlib/tree/develop/lib/node_modules/%40stdlib/blas/base/wasm/cswap
+[production-url]: https://github.com/stdlib-js/blas-base-wasm-cswap/tree/production
+[deno-url]: https://github.com/stdlib-js/blas-base-wasm-cswap/tree/deno
+[deno-readme]: https://github.com/stdlib-js/blas-base-wasm-cswap/blob/deno/README.md
+[umd-url]: https://github.com/stdlib-js/blas-base-wasm-cswap/tree/umd
+[umd-readme]: https://github.com/stdlib-js/blas-base-wasm-cswap/blob/umd/README.md
+[esm-url]: https://github.com/stdlib-js/blas-base-wasm-cswap/tree/esm
+[esm-readme]: https://github.com/stdlib-js/blas-base-wasm-cswap/blob/esm/README.md
