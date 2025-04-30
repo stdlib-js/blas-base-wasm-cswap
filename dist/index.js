@@ -1,11 +1,110 @@
-"use strict";var d=function(e,r){return function(){return r||e((r={exports:{}}).exports,r),r.exports}};var f=d(function(J,y){
-var O=require("path").resolve,L=require('@stdlib/fs-read-wasm/dist').sync,P=L(O(__dirname,"..","src","main.wasm"));y.exports=P
-});var q=d(function(K,E){
-var V=require('@stdlib/assert-is-wasm-memory/dist'),h=require('@stdlib/utils-define-nonenumerable-read-only-property/dist'),g=require('@stdlib/utils-inherit/dist'),m=require('@stdlib/wasm-module-wrapper/dist'),j=require('@stdlib/error-tools-fmtprodmsg/dist'),z=f();function o(e){if(!(this instanceof o))return new o(e);if(!V(e))throw new TypeError(j('26TH0',e));return m.call(this,z,e,{env:{memory:e}}),this}g(o,m);h(o.prototype,"main",function(r,s,i,a,t){return this._instance.exports.c_cswap(r,s,i,a,t),a});h(o.prototype,"ndarray",function(r,s,i,a,t,p,v){return this._instance.exports.c_cswap_ndarray(r,s,i,a,t,p,v),t});E.exports=o
-});var T=d(function(Q,b){
-var x=require('@stdlib/utils-define-nonenumerable-read-only-property/dist'),D=require('@stdlib/utils-inherit/dist'),M=require('@stdlib/strided-base-stride2offset/dist'),_=require('@stdlib/strided-base-read-dataview/dist').ndarray,k=require('@stdlib/wasm-memory/dist'),C=require('@stdlib/wasm-base-arrays2ptrs/dist'),R=require('@stdlib/wasm-base-strided2object/dist'),w=q();function c(){return this instanceof c?(w.call(this,new k({initial:0})),this):new c}D(c,w);x(c.prototype,"main",function(r,s,i,a,t){return this.ndarray(r,s,i,M(r,i),a,t,M(r,t))});x(c.prototype,"ndarray",function(r,s,i,a,t,p,v){var l,n,u;return l=C(this,[R(r,s,i,a),R(r,t,p,v)]),n=l[0],u=l[1],w.prototype.ndarray.call(this,r,n.ptr,n.stride,n.offset,u.ptr,u.stride,u.offset),n.copy&&_(r,this.view,n.stride*n.BYTES_PER_ELEMENT,n.ptr,s,i,a,!0),u.copy&&_(r,this.view,u.stride*u.BYTES_PER_ELEMENT,u.ptr,t,p,v,!0),t});b.exports=c
-});var A=d(function(U,W){
-var F=T(),S=new F;S.initializeSync();W.exports=S
-});var G=require('@stdlib/utils-define-nonenumerable-read-only-property/dist'),B=A(),H=q();G(B,"Module",H);module.exports=B;
 /** @license Apache-2.0 */
-//# sourceMappingURL=index.js.map
+
+'use strict';
+
+/**
+* WebAssembly routine to interchange two complex single-precision floating-point vectors.
+*
+* @module @stdlib/blas-base-wasm-cswap
+*
+* @example
+* var Complex64Array = require( '@stdlib/array-complex64' );
+* var cswap = require( '@stdlib/blas-base-wasm-cswap' );
+*
+* // Define strided arrays...
+* var x = new Complex64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ] );
+* var y = new Complex64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
+*
+* // Perform operation:
+* cswap.main( x.length, x, 1, y, 1 );
+* // x => <Complex64Array>[ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+* // y => <Complex64Array>[ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ]
+*
+* @example
+* var Complex64Array = require( '@stdlib/array-complex64' );
+* var cswap = require( '@stdlib/blas-base-wasm-cswap' );
+*
+* // Define strided arrays...
+* var x = new Complex64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ] );
+* var y = new Complex64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
+*
+* // Perform operation:
+* cswap.ndarray( x.length, x, 1, 0, y, 1, 0 );
+* // x => <Complex64Array>[ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+* // y => <Complex64Array>[ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ]
+*
+* @example
+* var Memory = require( '@stdlib/wasm-memory' );
+* var oneTo = require( '@stdlib/array-one-to' );
+* var ones = require( '@stdlib/array-ones' );
+* var zeros = require( '@stdlib/array-zeros' );
+* var bytesPerElement = require( '@stdlib/ndarray-base-bytes-per-element' );
+* var Complex64Array = require( '@stdlib/array-complex64' );
+* var reinterpretComplex64 = require( '@stdlib/strided-base-reinterpret-complex64' );
+* var cswap = require( '@stdlib/blas-base-wasm-cswap' );
+*
+* // Create a new memory instance with an initial size of 10 pages (320KiB) and a maximum size of 100 pages (6.4MiB):
+* var mem = new Memory({
+*     'initial': 10,
+*     'maximum': 100
+* });
+*
+* // Create a BLAS routine:
+* var mod = new cswap.Module( mem );
+* // returns <Module>
+*
+* // Initialize the routine:
+* mod.initializeSync();
+*
+* // Define a vector data type:
+* var dtype = 'complex64';
+*
+* // Specify a vector length:
+* var N = 5;
+*
+* // Define pointers (i.e., byte offsets) for storing input vectors:
+* var xptr = 0;
+* var yptr = N * bytesPerElement( dtype );
+*
+* // Write vector values to module memory:
+* var xbuf = oneTo( N*2, 'float32' );
+* var x = new Complex64Array( xbuf.buffer );
+* mod.write( xptr, x );
+*
+* var ybuf = zeros( N*2, 'float32' );
+* var y = new Complex64Array( ybuf.buffer );
+* mod.write( yptr, y );
+*
+* // Perform computation:
+* mod.main( N, xptr, 1, yptr, 1 );
+*
+* // Read out the results:
+* var viewX = zeros( N, dtype );
+* var viewY = zeros( N, dtype );
+* mod.read( xptr, viewX );
+* mod.read( yptr, viewY );
+*
+* console.log( reinterpretComplex64( viewX, 0 ) );
+* // => <Float32Array>[ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+*
+* console.log( reinterpretComplex64( viewY, 0 ) );
+* // => <Float32Array>[ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0 ]
+*/
+
+// MODULES //
+
+var setReadOnly = require( '@stdlib/utils-define-nonenumerable-read-only-property/dist' );
+var main = require( './main.js' );
+var Module = require( './module.js' );
+
+
+// MAIN //
+
+setReadOnly( main, 'Module', Module );
+
+
+// EXPORTS //
+
+module.exports = main;
+
+// exports: { "Module": "main.Module" }
