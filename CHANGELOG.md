@@ -32,6 +32,7 @@
 
 <details>
 
+-   [`73e4725`](https://github.com/stdlib-js/stdlib/commit/73e4725ad922926de4747c08a8121c99ef8a548d) - **style:** remove extraneous empty line _(by Philipp Burckhardt)_
 -   [`b809219`](https://github.com/stdlib-js/stdlib/commit/b809219ed266c469a961aa6c869ee61b748db660) - **fix:** ensure correct `this` context when creating a new Module instance _(by Philipp Burckhardt)_
 -   [`2ec2116`](https://github.com/stdlib-js/stdlib/commit/2ec2116fb43058cddc4bf726defbe60823bd2590) - **docs:** fix typo _(by Athan Reines)_
 -   [`fdd8f3a`](https://github.com/stdlib-js/stdlib/commit/fdd8f3a3d04fb0aaca79cccf33707eeb43e1f97c) - **docs:** update examples for `blas/base/wasm/cswap` [(#5766)](https://github.com/stdlib-js/stdlib/pull/5766) _(by Gururaj Gurram, Athan Reines)_
