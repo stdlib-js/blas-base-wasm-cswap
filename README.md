@@ -33,7 +33,7 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> Interchange two complex single-precision floating-point vectors.
+> Interchange two single-precision complex floating-point vectors.
 
 <section class="installation">
 
@@ -65,7 +65,7 @@ var cswap = require( '@stdlib/blas-base-wasm-cswap' );
 
 #### cswap.main( N, x, strideX, y, strideY )
 
-Interchanges two complex single-precision floating-point vectors.
+Interchanges two single-precision complex floating-point vectors.
 
 ```javascript
 var Complex64Array = require( '@stdlib/array-complex64' );
@@ -122,7 +122,7 @@ cswap.main( 2, x1, -2, y1, 1 );
 
 #### cswap.ndarray( N, x, strideX, offsetX, y, strideY, offsetY )
 
-Interchanges two complex single-precision floating-point vectors using alternative indexing semantics.
+Interchanges two single-precision complex floating-point vectors using alternative indexing semantics.
 
 ```javascript
 var Complex64Array = require( '@stdlib/array-complex64' );
@@ -182,7 +182,7 @@ mod.initializeSync();
 
 #### cswap.Module.prototype.main( N, xp, sx, yp, sy )
 
-Interchanges two complex single-precision floating-point vectors.
+Interchanges two single-precision complex floating-point vectors.
 
 <!-- eslint-disable n/no-sync -->
 
@@ -253,7 +253,7 @@ The function has the following parameters:
 
 #### cswap.Module.prototype.ndarray( N, xp, sx, ox, yp, sy, oy )
 
-Interchanges two complex single-precision floating-point vectors using alternative indexing semantics.
+Interchanges two single-precision complex floating-point vectors using alternative indexing semantics.
 
 <!-- eslint-disable n/no-sync -->
 
